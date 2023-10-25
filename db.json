@@ -1,0 +1,9 @@
+{
+    "foods": [
+        {"id": 1,
+         "name": "Bacon",
+         "date": "2023-10-24",
+         "calories": 280
+        }
+    ]
+}
