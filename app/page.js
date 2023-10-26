@@ -1,9 +1,12 @@
+import { redirect } from 'next/navigation';
+
 export default function Home() {
-  const x = 12 + 12;
-  return (
-   <div>
-    <h1>Hello from Joshy</h1>
-    <p>Yoo you won't believe this but 12 + 12 = {x}</p>
-   </div>
-  )
+
+  const currentDate = new Date();
+  const year = currentDate.getFullYear();
+  const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+  const day = String(currentDate.getDate()).padStart(2, '0');
+  const formattedDate = `${year}-${month}-${day}`;
+  
+  redirect(`/day/${formattedDate}`);
 }
