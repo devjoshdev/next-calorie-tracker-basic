@@ -39,9 +39,11 @@ const MyDatePicker = ({currentDate}) => {
                         const day = String(d.getDate()).padStart(2, '0');
                         const formattedDate = `${year}-${month}-${day}`;
                         console.log('oye formatted date is', formattedDate);
-                        setDateToPush(formattedDate)
+                        setDateToPush(formattedDate);
                         console.log("hello");                
-                        }}/>
+                        }}
+                    onKeyDown={e => e.preventDefault()}
+                        />                        
             </div>
         </div>
 
