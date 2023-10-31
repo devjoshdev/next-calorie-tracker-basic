@@ -1,0 +1,20 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.datebar {
+    display: flex;
+    flex-direction: row;
+}
+
+.date {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 3px;
+}
+
+.arrow {
+    margin-top: 4px;
+}

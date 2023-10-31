@@ -1,5 +1,5 @@
 'use client';
-import styles from "./MyDatePicker.module.css";
+import styles from "../styles/MyDatePicker.module.css";
 import DatePicker from "react-datepicker";
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
@@ -21,17 +21,20 @@ const datePickerDivStyle = {
 }
 const MyDatePicker = ({currentDate}) => {
     const [dateToPush, setDateToPush] = useState(currentDate);
+    const [myDate, setMyDate] = useState(new Date(currentDate));
     const { push } = useRouter();
+    console.log('here the date is', currentDate);
     useEffect(() => {
         push(`/day/${dateToPush}`);
     }, [dateToPush]);
     return (
         <div style={containerStyle}>
             <div style={datePickerDivStyle}>
-                <p>Choose a Date (YYYY-MM-DD)</p>
-                <DatePicker 
+                <p>Choose a Date</p>
+                <DatePicker
+                selected={new Date(currentDate).getTime() + 24 * 60 * 60 * 1000} 
                     showIcon
-                    dateFormat="yyyy/MM/dd" 
+                    dateFormat="yyyy-MM-dd" 
                     className={styles['react-datepicker-wrapper']} 
                     onChange={(d) => {
                         const year = d.getFullYear();
