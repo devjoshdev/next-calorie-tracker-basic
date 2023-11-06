@@ -1,0 +1,27 @@
+.rounded-box {
+    position: relative;
+    background-color: #f0f0f0;
+    border: 2px solid #333;
+    border-radius: 10px;
+    width: 30%
+}
+
+.edit-icon {
+    position: absolute;
+    bottom: 3px;
+    right: 35px;   
+    cursor: pointer;
+}
+
+.delete-icon {
+    position: absolute;
+    bottom: 3px;
+    right: 0px; 
+    cursor: pointer;
+}
+
+.food-and-cals {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
