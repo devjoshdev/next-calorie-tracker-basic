@@ -20,17 +20,13 @@ export default async function Day(props) {
     console.log(focusedDate);
     const foodListJSON = await getFoods(focusedDate);
     console.log(foodListJSON);
-    let foodListData = [];
-    if (foodListJSON.length !== 0) {
-        foodListData = foodListJSON[0].foods;
-    }
     
     if (dateRegEx.test(focusedDate) && validateYear(focusedYear) && validateMonth(focusedMonth) && validateDay(focusedDay)) {
         return (
             <div>
                 <MyDatePicker currentDate={focusedDate}/>
                 <DateBar currentDate={focusedDate}/>
-                <FoodList foods={foodListData}/>
+                <FoodList foods={foodListJSON}/>
             </div>
         );
     }
