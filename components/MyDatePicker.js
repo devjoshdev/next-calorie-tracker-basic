@@ -23,7 +23,6 @@ const MyDatePicker = ({currentDate}) => {
     const [dateToPush, setDateToPush] = useState(currentDate);
     const [myDate, setMyDate] = useState(new Date(currentDate));
     const { push } = useRouter();
-    console.log('here the date is', currentDate);
     useEffect(() => {
         push(`/day/${dateToPush}`);
     }, [dateToPush]);
@@ -41,9 +40,7 @@ const MyDatePicker = ({currentDate}) => {
                         const month = String(d.getMonth() + 1).padStart(2, '0'); // Months are zero-based
                         const day = String(d.getDate()).padStart(2, '0');
                         const formattedDate = `${year}-${month}-${day}`;
-                        console.log('oye formatted date is', formattedDate);
                         setDateToPush(formattedDate);
-                        console.log("hello");                
                         }}
                     onKeyDown={e => e.preventDefault()}
                         />                        
