@@ -1,14 +1,18 @@
 "use client";
 import styles from "@/styles/EditFoodModal.module.css";
+import { updateFood } from "@/app/actions";
 import { useState } from "react";
 const EditFoodModal = (props) => {
     const [newFoodName, setNewFoodName] = useState(props.foodName);
     const [newNumCals, setNewNumCals] = useState(props.numCals);
     const [modalOpen, setModalOpen] = useState(true);
   
-    const handleSave = () => {
+    const handleSave = async () => {
       console.log('New Food Name:', newFoodName);
       console.log('New Food Calories:', newNumCals);
+      console.log('hi the id is', props.id);
+      await updateFood(props.id, newFoodName, newNumCals, props.date);
+      props.onClose();
     };
     return (
         <div className={styles["modal-overlay"]} onClick={() => setModalOpen(false)}>

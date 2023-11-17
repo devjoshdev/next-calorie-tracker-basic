@@ -2,6 +2,7 @@ import Link from "next/link";
 import MyDatePicker from "@/components/MyDatePicker";
 import DateBar from "@/components/DateBar";
 import FoodList from "@/components/FoodList";
+import AddFoodForm from "@/components/AddFoodForm";
 import { getFoods } from "@/app/actions";
 const validateYear = (year) => {
     return (Number.parseInt(year) && (Number.parseInt(year) >= 1980));
@@ -26,7 +27,8 @@ export default async function Day(props) {
             <div>
                 <MyDatePicker currentDate={focusedDate}/>
                 <DateBar currentDate={focusedDate}/>
-                <FoodList foods={foodListJSON}/>
+                <FoodList foods={foodListJSON} currentDate={focusedDate}/>
+                <AddFoodForm date={focusedDate}/>
             </div>
         );
     }
